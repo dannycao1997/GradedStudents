@@ -2,32 +2,29 @@ package io.zipcoder;
 import java.util.ArrayList;
 
 
-
-//Student class
-public class Student {
-
-    // Instance Variables
+public class Student { // Student class
+    //instance variables
     String firstName;
     String lastName;
     ArrayList<Double> examScores;
 
 
-    // Constructor
+
+
+    //constructor
     public Student(String firstName, String lastName, Double[] examScores){
         this.firstName = firstName;
         this.lastName = lastName;
-        this.examScores = new ArrayList<>();
-        for(Double score : examScores) {
-            this.examScores.add(score);
-        }
-
+        this.examScores = new ArrayList<Double>(ArrayList.asList(examScores));
     }
 
-    // Getters and Setters
 
+
+    //getters and setters
     public String getFirstName(){
         return firstName;
     }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -35,6 +32,7 @@ public class Student {
     public String getLastName(){
         return lastName;
     }
+
     public void setLastName(){
         this.lastName = lastName;
     }
@@ -52,8 +50,16 @@ public class Student {
     }
 
     public void setExamScores(int examNumber, double newScore){
-        if(examNumber)
+        if(examNumber
     }
+
+    public void getAverageExamScore(){
+        ArrayList<Double> sum = examScores;
+    }
+    public String toString(){
+        return "Studen"
+    }
+
 
 
 
