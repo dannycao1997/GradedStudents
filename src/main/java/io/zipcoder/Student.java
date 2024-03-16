@@ -11,7 +11,6 @@ public class Student { // Student class
     String lastName;
     ArrayList<Double> examScores;
 
-
     //constructor
     public Student(String firstName, String lastName, Double[] examScores) {
         this.firstName = firstName;
@@ -55,19 +54,19 @@ public class Student { // Student class
     }
 
 
-    //method to add an Exam Score
+    //method to add an exam Score
     public void addExamScore(double examScore) {
         examScores.add(examScore);
     }
 
 
-    //method to set an Exam Score
+    //method to set an exam Score
     public void setExamScore(int examNumber, double newScore) {
         examScores.set(examNumber - 1, newScore);
     }
 
 
-    //method to get Average Exam Score
+    //method to get average exam score
     public double getAverageExamScore() {
         double sum = 0;
         for (Double score : examScores) {
