@@ -2,8 +2,10 @@ package io.zipcoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
+// THIS LAB WAS SOO HARD
+// REMINDER COME BACK AND REWRITE CODE
 public class Student { // Student class
+
     //instance variables
     String firstName;
     String lastName;
@@ -14,7 +16,7 @@ public class Student { // Student class
     public Student(String firstName, String lastName, Double[] examScores) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.examScores = new ArrayList<Double>(Arrays.asList(examScores));
+        this.examScores = new ArrayList<>(Arrays.asList(examScores));
     }
 
 
@@ -22,17 +24,20 @@ public class Student { // Student class
     public String getFirstName() {
         return firstName;
     }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public ArrayList<Double> getExamScores() {
+        return examScores;
     }
 
     public int getNumbersOfExamsTaken() {
@@ -40,21 +45,29 @@ public class Student { // Student class
     }
 
 
-    public ArrayList<Double> getExamScores() {
-        return examScores;
+    //method to get all exam scores into a string
+    public String getExamScoresString() {
+        StringBuilder sb = new StringBuilder("Exam Scores:\n");
+        for (int i = 0; i < examScores.size(); i++) {
+            sb.append("\tExam ").append(i + 1).append(" -> ").append(examScores.get(i)).append("\n");
+        }
+        return sb.toString();
     }
 
 
-
-    // Method to add an Exam Score
+    //method to add an Exam Score
     public void addExamScore(double examScore) {
         examScores.add(examScore);
     }
-    // Method to set an Exam Score
-    public void setExamScores(int examNumber, double newScore) {
+
+
+    //method to set an Exam Score
+    public void setExamScore(int examNumber, double newScore) {
         examScores.set(examNumber - 1, newScore);
     }
-    // Method to get Average Exam Score
+
+
+    //method to get Average Exam Score
     public double getAverageExamScore() {
         double sum = 0;
         for (Double score : examScores) {
@@ -63,15 +76,12 @@ public class Student { // Student class
         return sum / examScores.size();
     }
 
-    // Method to convert and return to a String
+
+    // override toString method
+    @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Student Name: ").append(firstName).append(" ").append(lastName).append("\n");
-        sb.append("> Average Score: ").append(getAverageExamScore()).append("\n");
-        sb.append("> Exam Scores: \n");
-        for(int i = 0; i < examScores.size(); i ++) {
-            sb.append("\tExam ").append(i + 1).append(" ->").append(examScores.get(i)).append("\n");
-        }
-        return sb.toString();
+        return "Student Name:" + firstName + " " + lastName + "\n" +
+                "> Average Score: " + getAverageExamScore() + "\n" +
+                "> " + getExamScoresString();
     }
 }
