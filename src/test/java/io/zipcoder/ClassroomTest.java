@@ -9,6 +9,7 @@ import static org.junit.Assert.assertNull;
 // TEST WAS ALMOST IMPOSSIBLE TO PASS
 public class ClassroomTest {
 
+
     @Test
     public void testGetAverageExamScore() {
         // Given
@@ -28,6 +29,7 @@ public class ClassroomTest {
         Assert.assertEquals(125.0, output, 0.001);
     }
 
+
     @Test
     public void testAddStudent() {
         // Given
@@ -44,6 +46,7 @@ public class ClassroomTest {
         assertEquals("Leon", students[0].getFirstName());
         assertEquals("Hunter", students[0].getLastName());
     }
+
 
     @Test
     public void testRemoveStudent() {
@@ -65,6 +68,7 @@ public class ClassroomTest {
         assertNull(updatedStudents[0]);
     }
 
+
     @Test
     public void testGetStudentsByScore() {
         // Given
@@ -84,6 +88,7 @@ public class ClassroomTest {
         assertEquals(s2, sortedStudents[0]); // s2 should have higher average score
         assertEquals(s1, sortedStudents[1]);
     }
+
 
     @Test
     public void testGetGradeBook() {

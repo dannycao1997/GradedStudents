@@ -78,5 +78,4 @@ public class StudentTest {
         // Then
         assertEquals(125.0, average, 0.001);
     }
-
 }
